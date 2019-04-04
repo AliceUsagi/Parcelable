@@ -15,17 +15,13 @@ public class ParkingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_parking);
 
         Intent intent = getIntent();
-        Vehicle vehicle = intent.getParcelableExtra("VEHICLE_EXTRA");
+        Vehicle vehicle = intent.getParcelableExtra("EXTRA_VEHICLE");
 
         TextView tvBrand1 = findViewById(R.id.brand);
         TextView tvKilometers1 = findViewById(R.id.kilometers);
 
-        Intent intent1 = getIntent();
-        String printBrand = intent.getStringExtra("EXTRA_BRAND");
-        String printKilometers = intent.getStringExtra("EXTRA_KILOMETERS");
-
-        tvBrand1.setText(printBrand);
-        tvKilometers1.setText(printKilometers);
+        tvBrand1.setText(vehicle.getName());
+        tvKilometers1.setText(vehicle.getKilometers());
 
     }
 
